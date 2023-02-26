@@ -1,0 +1,30 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 my-5">
+            <div class="card card-default">
+                <div class="card-header">Login</div>
+
+                <div class="card-body text-center">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <label class='my-2'>{{form.username.label}}</label><br>
+                        {{form.username}}<br>
+                        <label class='my-2'>{{form.password.label}}</label><br>
+                        {{form.password}}<br>
+                        <input class="btn btn-success m-2" type="submit" value="Login">
+                    </form>
+                    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}
